@@ -5,4 +5,10 @@ public class myclass
         //main function
     }
 
+    private string getName(string _id)
+    {
+        return _id;
+    }
+
+
 }
