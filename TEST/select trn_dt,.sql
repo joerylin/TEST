@@ -71,7 +71,7 @@ FROM
 			(
 				SELECT  *
 				FROM udf1
-				WHERE field_name = 'VAT商品名称'
+				WHERE field_name = 'VAT商品名称' 
 			) udf1_2
 			ON udf1_2.field_key = ac.ac_no || '~' AND udf1_2.sys_country = ac.sys_country
 			LEFT JOIN
@@ -81,58 +81,58 @@ FROM
 				       ,field_key
 				       ,nvl(field_value,'N') AS field_value
 				FROM udf1
-				WHERE field_name = 'VAT貸款相關項目'
+				WHERE field_name = 'VAT貸款相關項目' 
 			) udf1_3
 			ON udf1_3.field_key = ac.ac_no || '~' AND udf1_3.sys_country = ac.sys_country
 			LEFT JOIN
 			(
 				SELECT  *
 				FROM udf1
-				WHERE field_name = 'VAT價稅分離項目'
+				WHERE field_name = 'VAT價稅分離項目' 
 			) udf1_5
 			ON udf1_5.field_key = ac.ac_no || '~' AND udf1_5.sys_country = ac.sys_country
 			LEFT JOIN
 			(
 				SELECT  *
 				FROM udf1
-				WHERE field_name = 'VAT非存款金融机构'
+				WHERE field_name = 'VAT非存款金融机构' 
 			) udf1_6
 			ON udf1_6.field_key = ac.ac_no || '~' AND udf1_6.sys_country = ac.sys_country
 			LEFT JOIN
 			(
 				SELECT  *
 				FROM udf2
-				WHERE field_name = 'CSBR_SUPERVISION_FLAG'
+				WHERE field_name = 'CSBR_SUPERVISION_FLAG' 
 			) udf2_80
 			ON udf2_80.field_key = cs.counterparty || '~' AND udf2_80.sys_country = ac.sys_country
 			LEFT JOIN
 			(
 				SELECT  *
 				FROM udf2
-				WHERE field_name = 'TAXPAYER_TYPE'
+				WHERE field_name = 'TAXPAYER_TYPE' 
 			) udf2_84
 			ON udf2_84.field_key = cs.counterparty || '~' AND udf2_84.sys_country = ac.sys_country
-			WHERE to_char(ac.trn_dt, 'mm/yyyy') = to_char(ac.data_date, 'mm/yyyy')
+			WHERE to_char(ac.trn_dt, 'mm/yyyy') = to_char(ac.data_date, 'mm/yyyy') 
 		) a
 		LEFT JOIN
 		(
 			SELECT  *
 			FROM cfuf
-			WHERE field_name = 'SAP_COMPANY'
+			WHERE field_name = 'SAP_COMPANY' 
 		) cfuf_1
 		ON a.branch || '~' = cfuf_1.field_key AND a.sys_country = cfuf_1.sys_country
 		LEFT JOIN
 		(
 			SELECT  *
 			FROM cfuf
-			WHERE field_name = 'SAP_BRANCH'
+			WHERE field_name = 'SAP_BRANCH' 
 		) cfuf_2
 		ON '0' || a.branch = cfuf_2.field_value AND a.sys_country = cfuf_2.sys_country
 		LEFT JOIN
 		(
 			SELECT  *
 			FROM cfuf
-			WHERE field_name = 'SAP_PROFIT'
+			WHERE field_name = 'SAP_PROFIT' 
 		) cfuf_6
 		ON a.branch || '~' = cfuf_6.field_key AND a.sys_country = cfuf_6.sys_country
 		WHERE a.ac_ccy <> 'CNY'
