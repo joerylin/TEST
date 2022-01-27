@@ -1,9 +1,4 @@
 version 1 initial
 version 2 add This is a test
 version 3 我愛git flow
-<<<<<<< HEAD
-version 4 test 
-version 5 test 5
-=======
 version 4 tst
->>>>>>> 06f211c2bf1453df1c4e55b6eaa9265b5f6fa4eb
